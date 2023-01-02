@@ -1,8 +1,5 @@
 <?php include('../templates/cabecera.php'); ?>
-
-
-Control de Cursos
-
+<?php include('../secciones/cursos.php'); ?>
 
 <div class="row">
     <div class="col-12">
@@ -23,23 +20,25 @@ Control de Cursos
                             <!--ID-->
                             <div class="mb-3">
                                 <label for="" class="form-label">ID</label>
-                                <input  type="text" 
-                                        class="form-control" 
-                                        name="id" 
-                                        id="id" 
-                                        aria-describedby="helpId" 
-                                        placeholder="ID">
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="id" 
+                                       id="id" 
+                                       value="<?= $id; ?>" 
+                                       aria-describedby="helpId" 
+                                       placeholder="ID">
                             </div>
 
                             <!--Nombre-->
                             <div class="mb-3">
                                 <label for="nombre_curso" class="form-label">Nombre</label>
-                                <input  type="text" 
-                                        class="form-control" 
-                                        name="nombre_curso" 
-                                        id="nombre_curso" 
-                                        aria-describedby="helpId" 
-                                        placeholder="Nombre del curso">
+                                <input type="text" 
+                                       class="form-control" 
+                                       name="nombre_curso" 
+                                       id="nombre_curso" 
+                                       value="<?= $nombre_curso; ?>" 
+                                       aria-describedby="helpId" 
+                                       placeholder="Nombre del curso">
                             </div>
 
                             <div class="btn-group" role="group" aria-label="">
@@ -60,7 +59,7 @@ Control de Cursos
             <!--Tabla para mostrar registros-->
             <div class="col-md-7">
                 <div class="table-responsive">
-                    <table class="table table-primary">
+                    <table class="table table-light">
                         <!--table header-->
                         <thead>
                             <tr>
@@ -72,12 +71,21 @@ Control de Cursos
 
                         <!--table body-->
                         <tbody>
-                            <tr class="">
-                                <td>1</td>
-                                <td>Curso de PHP</td>
-                                <td>Seleccionar 1</td>
-                            </tr>
 
+
+                            <?php foreach ($listaCursos as $curso) { ?>
+                                <tr>
+                                    <td> <?= $curso['id']; ?> </td>
+                                    <td> <?= $curso['nombre_curso']; ?> </td>
+                                    <td>
+                                        <form action="" method="post">
+                                            <input type="hidden" name="id" id="id" value="<?= $curso['id']; ?>" />
+                                            <input type="submit" value="Seleccionar" name="accion" class="btn btn-info">
+                                        </form>
+
+                                    </td>
+                                </tr>
+                            <?php } ?>
                         </tbody>
 
                     </table>
