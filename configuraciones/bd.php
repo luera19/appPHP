@@ -9,7 +9,7 @@ class Conectar{
 
             $opciones[PDO::ATTR_ERRMODE] = PDO::ERRMODE_EXCEPTION;
             self::$instancia = new PDO('mysql:host=localhost;dbname=aplicacion', 'root', '', $opciones);
-            echo "Conexion Establecida...";
+            //echo "Conexion Establecida...";
         }
         return self::$instancia;
 

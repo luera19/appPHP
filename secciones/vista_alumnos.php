@@ -13,6 +13,7 @@
                 <div class="card-body">
 
                     <!--ID-->
+                    <!--class d-none para que no muestre el ID-->
                     <div class="mb-3 d-none">
                         <label for="id" class="form-label">ID</label>
                         <input type="text" 
@@ -57,14 +58,16 @@
                                 placeholder="Seleccione una opción">
                             
                             <?php foreach ($cursos as $curso) { ?>
+                                <!--Recuperando el arreglo de los cursos-->
                                 <option
                                     <?php
-                                        if (!empty($arregloCursos)) :
+                                        if(!empty($arregloCursos)) :
                                             if (in_array($curso['id'], $arregloCursos)) :
                                                 echo 'selected';
                                             endif;
                                         endif;
                                     ?> 
+                                        
                                         value="<?= $curso['id']; ?>">
                                         
                                         <?= $curso['id']; ?> - <?= $curso['nombre_curso']; ?>
@@ -111,20 +114,25 @@
                         <td><?= $alumno['nombre']; ?> <?= $alumno['apellidos']; ?>
                             <br/>
                             <!--Recupero la lista de cursos-->
-                            <?php foreach ($alumno["cursos"] as $curso) { ?> 
-                                -<a href="certificado.php?idcurso=<?= $curso['id']; ?>
-                                    &idalumno=<?= $alumno["id"]; ?>">
+                            <?php foreach ($alumno["cursos"] as $curso) { ?>
+                                <!--Redireccionando a certificado.php--> 
+                                <a href="certificado.php?idcurso=<?= $curso['id'];?>&idalumno=<?= $alumno["id"];?>">
                                     <i class="bi bi-filetype-pdf text-danger"></i> <?= $curso['nombre_curso']; ?>
                                 </a>
                                 <br/>
                             <?php  } ?>
                         </td>
 
-
+                        <!--btn Seleccionar-->        
                         <td>
                             <form action="" method="post">
-                                <input type="hidden" name="id" value="<?= $alumno['id']; ?>">
-                                <input type="submit" value="Seleccionar" name="accion" class="btn btn-info">
+                                <input  type="hidden" 
+                                        name="id" 
+                                        value="<?= $alumno['id']; ?>">
+                                <input  type="submit" 
+                                        value="Consultar" 
+                                        name="accion" 
+                                        class="btn btn-info">
                             </form>
                         </td>
 
@@ -142,7 +150,6 @@
 
 <!--SCRIPT TomSelect-->
 <script>
-    
 
     new TomSelect('#listaCursos');
 
