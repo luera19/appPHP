@@ -1,5 +1,5 @@
 <?php
-    include_once '../configuraciones/bd.php';
+    include_once '../models/bd.php';
     $conexionBD=Conectar::crearInstancia();
     
     //Validación de campos

@@ -1,6 +1,6 @@
 <?php 
     require('../librerias/fpdf/fpdf.php');
-    include_once '../configuraciones/bd.php';
+    include_once '../models/bd.php';
     $conexionBD=Conectar::crearInstancia();
 
 
@@ -50,7 +50,7 @@
     //Agregando el texto del PDF
     //agregarTexto($pdf, $texto, $x, $y, $align = 'L', $fuente, $size = 10, $r = 0, $g = 0, $b = 0);
     //Nombre del alumno
-    agregarTexto($pdf, ucwords(($alumno['nombre'] . " " . $alumno['apellidos'])), 60, 70, 'L', "Helvetica", 30, 0, 84, 115);
+    agregarTexto($pdf, ucwords(utf8_decode($alumno['nombre'] . " " . $alumno['apellidos'])), 60, 70, 'L', "Helvetica", 30, 0, 84, 115);
     //Nombre del curso
     agregarTexto($pdf, $alumno['nombre_curso'], -250, 115, 'C', "Helvetica", 20, 0, 84, 115);
     //Fecha

@@ -1,5 +1,5 @@
-<?php include('../templates/cabecera.php'); ?>
-<?php include('../secciones/alumnos.php'); ?>
+<?php include('../templates/header.php'); ?>
+<?php include('../views/alumnos.php'); ?>
 
 <br />
 <div class="row">
@@ -156,4 +156,4 @@
 </script>
 
 <!--Importando el pie-->
-<?php include('../templates/pie.php'); ?>
+<?php include('../templates/footer.php'); ?>

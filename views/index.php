@@ -1,4 +1,4 @@
-<?php include('../templates/cabecera.php'); ?>
+<?php include('../templates/header.php'); ?>
     
     <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
@@ -12,10 +12,10 @@
             
 
             <a class="btn btn-primary btn-lg"
-                    href = "vista_alumnos.php" 
+                    href = "../controller/vista_alumnos.php" 
                     role="button">Ingresar
             </a>
         
         </div>
     </div>
-<?php include('../templates/pie.php'); ?>
+<?php include('../templates/footer.php'); ?>

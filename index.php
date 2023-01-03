@@ -9,7 +9,7 @@ if ($_POST) {
 
     if($_POST['usuario']=='admin' && $_POST['password']=='admin'){
         $_SESSION['usuario']=$_POST['usuario'];
-        header('Location: secciones/index.php');
+        header('Location: views/index.php');
       }
 }
 

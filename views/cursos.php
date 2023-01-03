@@ -1,6 +1,6 @@
 <?php
     //importando la conexion
-    include_once '../configuraciones/bd.php';
+    include_once '../models/bd.php';
     //invocando la conexion
     $conexionBD= Conectar::crearInstancia();
 

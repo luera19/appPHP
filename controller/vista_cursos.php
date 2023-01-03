@@ -1,5 +1,5 @@
-<?php include('../templates/cabecera.php'); ?>
-<?php include('../secciones/cursos.php'); ?>
+<?php include('../templates/header.php'); ?>
+<?php include('../views/cursos.php'); ?>
 
 <div class="row">
     <div class="col-12">
@@ -97,4 +97,4 @@
         </div>
     </div>
 
-    <?php include('../templates/pie.php'); ?>
+    <?php include('../templates/footer.php'); ?>
